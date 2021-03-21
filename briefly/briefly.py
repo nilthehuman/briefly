@@ -1,16 +1,17 @@
 """The main entry point to the briefly text analyzer tool."""
 
-#import argparse
-#parser = argparse.ArgumentParser()
-#parser.add_argument("url", help="the webpage you wish to download and analyze")
-#parser.parse_args()
+from flask import Flask, render_template
 
-def main():
-    """main function, called by 'python -m briefly'
+app = Flask(__name__)
 
+@app.route('/')
+def index(url):
+    """The main entry point.
     Takes an HTTP URL as parameter to fetch and analyze.
     """
-    print("hello world")
+    return render_template('index.html')
 
-if __name__ == '__main__':
-    main()
+@app.route('/echo/<input>')
+def echo(input):
+    return input
+
