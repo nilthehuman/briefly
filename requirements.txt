@@ -1,0 +1,3 @@
+# not exactly sure about the versions but these should work
+beautifulsoup4 >= 4.0.0
+nltk >= 3.0.0
