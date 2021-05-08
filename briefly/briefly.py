@@ -22,6 +22,6 @@ def index(url=None):
     response = None
     if url is not None:
         url = url.replace('^', '/')
-        response = get_html_body(url) is not None
+        response = get_html_body(url)
     return render_template('index.html', url=url, response=response)
 
