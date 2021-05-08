@@ -19,7 +19,7 @@
           <script>
           function go() {
             var inputURL = document.getElementById('input').value;
-            inputURL = inputURL.replace("/", "^");
+            inputURL = inputURL.replaceAll("/", "^");
             inputURL = encodeURIComponent(inputURL.trim());
             location.href = inputURL;
           }
