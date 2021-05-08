@@ -18,4 +18,11 @@ def get_html_body(url):
     except requests.exceptions.RequestException:
         return None
     soup = BeautifulSoup(response_text, 'html.parser')
-    return soup.body.get_text()
+    text = soup.get_text()
+    # A bit of cleanup
+    for script in soup(["script", "style"]):
+        script.extract()
+    lines = (line.strip() for line in text.splitlines())
+    chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
+    text = '\n'.join(chunk for chunk in chunks if chunk)
+    return text
