@@ -14,8 +14,8 @@ def echo(input):
     return input
 
 @app.route('/briefly/')
-@app.route('/briefly/<input>')
-def index(url=None):
+@app.route('/briefly/<url>')
+def index(url=url):
     """The main entry point.
     Takes an HTTP URL as parameter to fetch and analyze.
     """
