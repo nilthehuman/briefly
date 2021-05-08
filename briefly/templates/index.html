@@ -15,10 +15,17 @@
           <h1>Hi. I'm <b>Briefly</b>, a topic identifying engine.</h1>
           <h3>Give me a webpage and I'll tell you what it's about:</h2>
           <input id="input" type="text" onfocus="this.value=''" value="webpage URL">
-          <button onclick="location.href='/'+document.getElementById('input').value;">Go</button>
+          <button onclick="go()">Go</button>
           <form action="/">
             <input type="submit" value="Go to home page" />
           </form>
+          <script>
+          function go() {
+            var inputURL = document.getElementById('input').value;
+            inputURL = encodeURIComponent(inputValue.trim());
+            location.href='/briefly/' + inputURL;
+          }
+          </script>
         </div>
       </section>
     </div>
