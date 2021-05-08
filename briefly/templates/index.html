@@ -15,7 +15,7 @@
           <h1>Hi. I'm <b>Briefly</b>, a topic identifying engine.</h1>
           <h3>Give me a webpage and I'll tell you what it's about:</h2>
           <input id="input" type="text" onfocus="this.value=''" value="webpage URL">
-          <button onclick="document.getElementById('input').value = Date()">Go</button>
+          <button onclick="location.href='/'+document.getElementById('input').value;">Go</button>
           <form action="/">
             <input type="submit" value="Go to home page" />
           </form>
