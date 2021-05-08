@@ -19,6 +19,7 @@
           <script>
           function go() {
             var inputURL = document.getElementById('input').value;
+            inputURL = inputURL.replace("/", "^");
             inputURL = '/briefly/' + inputURL;
             inputURL = encodeURIComponent(inputURL.trim());
             location.href = inputURL;
