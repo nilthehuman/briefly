@@ -23,7 +23,8 @@
           function go() {
             var inputURL = document.getElementById('input').value;
             inputURL = encodeURIComponent(inputURL.trim());
-            location.href='/briefly/' + inputURL;
+            alert("inputURL == " + inputURL);
+            location.href = '/briefly/' + inputURL;
           }
           </script>
         </div>
