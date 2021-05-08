@@ -19,7 +19,7 @@
           <script>
           function go() {
             var inputURL = document.getElementById('input').value.trim();
-            inputURL = url.replace(/^https?\:\/\//i, "");
+            inputURL = inputURL.replace(/^https?\:\/\//i, "");
             inputURL = inputURL.replaceAll("/", "^");
             inputURL = encodeURIComponent(inputURL);
             location.href = inputURL;
