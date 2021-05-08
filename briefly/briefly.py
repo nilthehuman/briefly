@@ -1,6 +1,7 @@
 """The main entry point to the briefly text analyzer tool."""
 
 from flask import Flask, render_template
+from .http import get_html_body
 
 app = Flask(__name__)
 
@@ -18,5 +19,8 @@ def index(url=None):
     """The main entry point.
     Takes an HTTP URL as parameter to fetch and analyze.
     """
-    return render_template('index.html')
+    response = None
+    if url is not None:
+        response = get_html_body(url) is not None
+    return render_template('index.html', url=url, response=response)
 

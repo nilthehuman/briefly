@@ -13,6 +13,9 @@ def check_internet_connection():
 
 def get_html_body(url):
     """Download given page and extract main content."""
-    response_text = requests.get(url).text
+    try:
+        response_text = requests.get(url).text
+    except requests.exceptions.RequestException:
+        return None
     soup = BeautifulSoup(response_text, 'html.parser')
     return soup.body.get_text()
