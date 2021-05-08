@@ -19,8 +19,9 @@
           <script>
           function go() {
             var inputURL = document.getElementById('input').value;
+            inputURL = '/briefly/' + inputURL;
             inputURL = encodeURIComponent(inputURL.trim());
-            location.href = '/briefly/' + inputURL;
+            location.href = inputURL;
           }
           </script>
         </div>
