@@ -18,11 +18,11 @@
           <button onclick="go()">Go</button>
           <script>
           function go() {
-            var inputURL = new URL(document.getElementById('input').value.trim());
-            targetURL = inputURL.host + inputURL.pathname
-            targetURL = targetURL.replaceAll("/", "^");
-            targetURL = encodeURIComponent(targetURL);
-            location.href = targetURL;
+            var inputURL = document.getElementById('input').value.trim();
+            inputURL = url.replace(/^https?\:\/\//i, "");
+            inputURL = inputURL.replaceAll("/", "^");
+            inputURL = encodeURIComponent(inputURL);
+            location.href = inputURL;
           }
           </script>
         </div>
