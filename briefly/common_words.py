@@ -22,7 +22,7 @@ COMMON_ENGLISH_NON_VERBS = [
     # conjunctions
     'and', 'or', 'so', 'but', 'though', 'if', 'then', 'than',
     # adverbs
-    'no', 'not', 'n\'t', 'now', 'here', 'there', 'also', 'just', 'back', 'even', 'well',
+    'no', 'not', 'n\'t', 'now', 'here', 'there', 'also', 'just', 'back', 'even', 'very', 'well',
     # numerals and quantifiers
     'one', 'all', 'any', 'most', 'some', 'many', 'few',
     # personal and possessive pronouns
