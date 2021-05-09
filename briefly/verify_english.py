@@ -45,7 +45,7 @@ def prevalence_of_common_words(tokens):
     return 1 - remaining_token_count / total_token_count
 
 ENGLISH_CHARACTER_LIMIT = 0.9
-ENGLISH_WORDS_LIMIT = 0.2
+ENGLISH_WORDS_LIMIT = 0.15
 
 def is_in_english(string):
     """Find out if the given string is writter in English."""
