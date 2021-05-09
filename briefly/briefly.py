@@ -23,10 +23,10 @@ def index(url=None):
     Takes an HTTP URL as parameter to fetch and analyze.
     """
     text = None
+    keywords_message = None
     if url is not None:
         url = url.replace('^', '/')
         text = get_html_text('http://' + url)
-        keywords = None
         if is_in_english(text):
             keywords = gensim_lda(text)
             keyword_message = '[ ' + ', '.join(gensim_lda(text)) + ' ]'
