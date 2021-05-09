@@ -760,3 +760,8 @@ span.briefly {
   font-family: Helvetica;
   font-weight: bold;
 }
+
+.footer {
+  text-align: center;
+  font-size: 9px;
+}
