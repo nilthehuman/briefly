@@ -818,6 +818,7 @@ section #title .credits.right {
 }
 
 span.briefly {
-  color: green;
+  color: rgba(10, 220, 40, 1.0);
+  font-family: 'Helvetica';
   font-weight: bold;
 }
