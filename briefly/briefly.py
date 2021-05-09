@@ -27,7 +27,7 @@ def index(url=None):
         url = url.replace('^', '/')
         response = get_html_text('http://' + url)
         if is_in_english(response):
-            response = ', '.join(gensim_lda(response)))
+            response = ', '.join(gensim_lda(response))
         else:
             response = u'That webpage does not seem to be written in English. \U0001f928'
     return render_template('index.html', url=url, response=response)
