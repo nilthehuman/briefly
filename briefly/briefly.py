@@ -23,16 +23,17 @@ def index(url=None):
     Takes an HTTP URL as parameter to fetch and analyze.
     """
     text = None
+    english = None
     keywords_message = None
-    full_text, body_text = None, None
+    body_text = None
     if url is not None:
         url = url.replace('^', '/')
         full_text, body_text = get_html_text('http://' + url)
-        if full_text is not None and is_in_english(full_text):
-            keywords = gensim_lda(full_text)
-            keywords_message = '[ ' + ', '.join(keywords) + ' ]'
-            body_text = highlight_keywords(full_text, keywords)
-        else:
-            body_text = u'That webpage does not seem to be written in English. \U0001f928'
-    return render_template('index.html', url=url, keywords=keywords_message, text=body_text)
+        if full_text is not None:
+            english = is_in_english(full_text)
+            if english:
+                keywords = gensim_lda(full_text)
+                keywords_message = '[ ' + ', '.join(keywords) + ' ]'
+                body_text = highlight_keywords(full_text, keywords)
+    return render_template('index.html', url=url, english=english, keywords=keywords_message, text=body_text)
 
