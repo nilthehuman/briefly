@@ -29,7 +29,7 @@ def index(url=None):
         text = get_html_text('http://' + url)
         if is_in_english(text):
             keywords = gensim_lda(text)
-            keyword_message = '[ ' + ', '.join(gensim_lda(text)) + ' ]'
+            keywords_message = '[ ' + ', '.join(gensim_lda(text)) + ' ]'
             text = highlight_keywords(text, keywords)
         else:
             text = u'That webpage does not seem to be written in English. \U0001f928'
