@@ -2,6 +2,7 @@
 
 from flask import Flask, render_template
 from .http import get_html_body
+from .verify_english import strip_common_words, is_in_english
 
 app = Flask(__name__)
 
@@ -23,5 +24,9 @@ def index(url=None):
     if url is not None:
         url = url.replace('^', '/')
         response = get_html_body('http://' + url)
+        if is_in_english(response)
+            response = strip_common_words(response)
+        else
+            response = 'That webpage does not seem to be written in english. &#129320;'
     return render_template('index.html', url=url, response=response)
 
