@@ -17,7 +17,7 @@ def gensim_lda(string):
     lemmata = [w for w in map(wordnet.morphy, words) if w is not None]
     dictionary = Dictionary([lemmata])
     bow = dictionary.doc2bow(lemmata)
-    lda_model = LdaModel([bow], num_topics=3, id2word=dictionary)
+    lda_model = LdaModel([bow], num_topics=5, id2word=dictionary)
     # print_topics() spits out a list of pairs whose second elements are strings
     # with the main topic keywords buried in them, e.g.:
     # [(0, '0.148*"cats"'), (1, '0.225*"mice"'), (2, '0.150*"dogs"')]
