@@ -1,7 +1,7 @@
 """The main entry point to the Briefly text analyzer service."""
 
 from flask import Flask, render_template
-from .http import get_html_text
+from .http import get_html_text, get_the_body_only
 from .score import gensim_lda, highlight_keywords
 from .tokenize import get_words
 from .verify_english import strip_common_words, is_in_english
@@ -33,5 +33,5 @@ def index(url=None):
             text = highlight_keywords(text, keywords)
         else:
             text = u'That webpage does not seem to be written in English. \U0001f928'
-    return render_template('index.html', url=url, keywords=keyword_message, text=text)
+    return render_template('index.html', url=url, keywords=keyword_message, text=get_the_body_only(text))
 

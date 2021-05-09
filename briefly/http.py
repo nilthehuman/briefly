@@ -26,3 +26,9 @@ def get_html_text(url):
     chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
     text = '\n'.join(chunk for chunk in chunks if chunk)
     return text
+
+def get_the_body_only(html):
+    """Prune title, header etc. from the raw extract."""
+    soup = BeautifulSoup(html, 'html.parser')
+    body_text = soup.body.get_text()
+    return body_text
