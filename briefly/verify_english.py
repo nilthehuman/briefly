@@ -34,6 +34,10 @@ def strip_common_words(tokens):
     """Remove the most common English words from a list of tokens."""
     return list(filter(lambda x: x.lower() not in COMMON_ENGLISH_WORDS, tokens))
 
+def strip_single_letter_words(tokens):
+    """Remove all tokens with just one letter in them."""
+    return list(x for x in tokens if 1 < len(x))
+
 def prevalence_of_common_words(tokens):
     """Determine the ratio of common words in a list of tokens (between 0 and 1)."""
     remaining_token_count = len(strip_common_words(tokens))

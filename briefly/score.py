@@ -12,7 +12,8 @@ get_sentences = sent_tokenize
 
 def gensim_lda(string):
     """Latent Dirichlet Allocation, a popular method, courtesy of the Gensim library."""
-    words = strip_common_words(map(lambda w: w.lower(), get_words(string)))
+    words = map(lambda w: w.lower(), get_words(string))
+    words = strip_common_words(strip_single_letter_words(words))
     lemmata = [w for w in map(wordnet.morphy, words) if w is not None]
     dictionary = Dictionary([lemmata])
     bow = dictionary.doc2bow(lemmata)
