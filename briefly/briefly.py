@@ -24,14 +24,15 @@ def index(url=None):
     """
     text = None
     keywords_message = None
+    full_text, body_text = None, None
     if url is not None:
         url = url.replace('^', '/')
-        text = get_html_text('http://' + url)
-        if is_in_english(text):
-            keywords = gensim_lda(text)
-            keywords_message = '[ ' + ', '.join(gensim_lda(text)) + ' ]'
-            text = highlight_keywords(text, keywords)
+        full_text, body_text = get_html_text('http://' + url)
+        if full_text is not None and is_in_english(full_text):
+            keywords = gensim_lda(full_text)
+            keywords_message = '[ ' + ', '.join(keywords) + ' ]'
+            body_text = highlight_keywords(full_text, keywords)
         else:
-            text = u'That webpage does not seem to be written in English. \U0001f928'
-    return render_template('index.html', url=url, keywords=keywords_message, text=get_the_body_only(text))
+            body_text = u'That webpage does not seem to be written in English. \U0001f928'
+    return render_template('index.html', url=url, keywords=keywords_message, text=body_text)
 
