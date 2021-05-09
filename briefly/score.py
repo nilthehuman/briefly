@@ -22,7 +22,7 @@ def gensim_lda(string):
     # [(0, '0.148*"cats"'), (1, '0.225*"mice"'), (2, '0.150*"dogs"')]
     topic_vector = lda_model.print_topics(num_words=1)
     topics = [t.split('"')[1] for (_, t) in topic_vector]
-    return topics
+    return list(set(topics))
 
 def bag_of_words(string):
     """Count the number of times each distinct word occurs.

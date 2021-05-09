@@ -29,9 +29,9 @@
       {% if url %}
         <section>
           <div id="results">
-            <p>You asked for the URL {{ url }}.</p>
+            <p>You asked for the page at <span style="font-family:'Consolas'">{{ url }}</span>.</p>
             {% if response %}
-              <p>This is the text I got from there: {{ response[0:100] }}</p>
+              <p>The main keywords seem to be: {{ response }}</p>
             {% else %}
               <p>That website seems to be inaccessible. Sorry.</p>
             {% endif %}
