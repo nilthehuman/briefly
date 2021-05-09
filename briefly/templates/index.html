@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <script src="/briefly/assets/js/respond.js"></script>
+    <script src="/briefly/assets/javascripts/respond.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Briefly</title>
   </head>
@@ -12,7 +12,7 @@
     <div class="wrapper">
       <section>
         <div id="title">
-          <h1>Welcome to <b>Briefly</b>, a topic identifying engine.</h1>
+          <h1>Welcome to <span class="briefly">Briefly</span>, a topic identifying service.</h1>
           <h3>Give me a webpage and I'll tell you what it's about:</h2>
           <input id="input" type="text" onfocus="this.value=''" value="webpage URL">
           <button onclick="go()">Go</button>
@@ -39,6 +39,9 @@
           </div>
         </section>
       {% endif %}
+    </div>
+    <div class="footer" role="contentinfo">
+    <p>Briefly is in early alpha. Expect naught but blood, sweat and tears.</p>
     </div>
   </body>
 </html>

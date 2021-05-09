@@ -816,3 +816,8 @@ section #title .credits.right {
     display: none;
   }
 }
+
+span.briefly {
+  color: green;
+  font-weight: bold;
+}
