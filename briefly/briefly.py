@@ -27,6 +27,6 @@ def index(url=None):
         if is_in_english(response):
             response = strip_common_words(response)
         else:
-            response = 'That webpage does not seem to be written in english. \\1f928;'
+            response = u'That webpage does not seem to be written in english. \u0001f928'
     return render_template('index.html', url=url, response=response)
 
