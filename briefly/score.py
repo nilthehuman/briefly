@@ -6,7 +6,7 @@ from nltk.corpus import wordnet
 from gensim.corpora import Dictionary
 from gensim.models.ldamodel import LdaModel
 from .tokenize import get_words
-from .verify_english import strip_common_words
+from .verify_english import strip_common_words, strip_single_letter_words
 
 get_sentences = sent_tokenize
 
