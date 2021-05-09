@@ -11,7 +11,7 @@ def check_internet_connection():
         return False
     return response.status_code == 200
 
-def get_html_body(url):
+def get_html_text(url):
     """Download given page and extract main content."""
     try:
         response_text = requests.get(url).text

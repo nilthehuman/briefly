@@ -1,7 +1,7 @@
 """The main entry point to the briefly text analyzer tool."""
 
 from flask import Flask, render_template
-from .http import get_html_body
+from .http import get_html_text
 from .verify_english import strip_common_words, is_in_english
 
 app = Flask(__name__)
@@ -23,7 +23,7 @@ def index(url=None):
     response = None
     if url is not None:
         url = url.replace('^', '/')
-        response = get_html_body('http://' + url)
+        response = get_html_text('http://' + url)
         if is_in_english(response):
             response = strip_common_words(response)
         else:
