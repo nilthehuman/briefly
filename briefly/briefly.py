@@ -1,7 +1,7 @@
 """The main entry point to the Briefly text analyzer service."""
 
 from flask import Flask, render_template
-from .http import get_html_text, get_the_body_only
+from .http import get_html_text
 from .score import gensim_lda, highlight_keywords
 from .tokenize import get_words
 from .verify_english import strip_common_words, is_in_english
