@@ -16,7 +16,7 @@ def get_html_text(url):
     try:
         response_text = requests.get(url).text
     except requests.exceptions.RequestException:
-        return None
+        return None, None
     soup = BeautifulSoup(response_text, 'html.parser')
     for script in soup(['script', 'style']):
         script.extract()
