@@ -34,6 +34,6 @@ def index(url=None):
             if english:
                 keywords = gensim_lda(full_text)
                 keywords_message = '[ ' + ', '.join(keywords) + ' ]'
-                body_text = highlight_keywords(full_text, keywords)
+                body_text = highlight_keywords(body_text, keywords)
     return render_template('index.html', url=url, english=english, keywords=keywords_message, text=body_text)
 
