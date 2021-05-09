@@ -33,5 +33,5 @@ def index(url=None):
             text = highlight_keywords(text, keywords)
         else:
             text = u'That webpage does not seem to be written in English. \U0001f928'
-    return render_template('index.html', url=url, keywords=keyword_message, text=get_the_body_only(text))
+    return render_template('index.html', url=url, keywords=keywords_message, text=get_the_body_only(text))
 
