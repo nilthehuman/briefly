@@ -34,9 +34,3 @@ def bag_of_words(string):
     # TODO
     pass
 
-def highlight_keywords(text, keywords):
-    """Generate HTML with keywords marked in color."""
-    # TODO
-    #' '.join(...)
-    return text
-
