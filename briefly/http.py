@@ -23,7 +23,7 @@ def get_html_text(url):
     full_text = soup.get_text()
     body_text = soup.body.get_text()
     # A bit of cleanup
-    lines = (line.strip() for line in full_text.splitlines())
+    lines = (line.strip() for line in body_text.splitlines())
     chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
-    full_text = '\n'.join(chunk for chunk in chunks if chunk)
+    body_text = '\n'.join(chunk for chunk in chunks if chunk)
     return full_text, body_text
