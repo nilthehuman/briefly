@@ -22,7 +22,7 @@ def get_html_text(url):
     for script in soup(['script', 'style']):
         script.extract()
     full_text = soup.get_text()
-    body_text = soup.body.get_text()
+    body_text = soup.body.get_text() if soup.body is not None else ''
     # A bit of cleanup
     lines = (line.strip() for line in body_text.splitlines())
     words = (word.strip() for line in lines for word in line.split())
