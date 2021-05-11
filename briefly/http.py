@@ -26,5 +26,5 @@ def get_html_text(url):
     # A bit of cleanup
     lines = (line.strip() for line in body_text.splitlines())
     words = (word.strip() for line in lines for word in line.split(' '))
-    body_text = ' '.join(word for word in islice(words, 150) if word)
+    body_text = '\n'.join(word for word in islice(words, 150) if word)
     return full_text, body_text
