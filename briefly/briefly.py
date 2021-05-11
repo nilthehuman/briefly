@@ -33,7 +33,11 @@ def index(url=None):
             english = is_in_english(full_text)
             if english:
                 keywords = gensim_lda(full_text)
-                keywords_message = '[ ' + ', '.join(keywords) + ' ]'
+                keywords_message = '[ '
+                                      + f'<span style=\'hottest\'>{keywords[0]}</span>' if 0 < len(keywords) else ''
+                                      + f'<span style=\'hotter\'>{keywords[1]}</span>' if 1 < len(keywords) else ''
+                                      + f'<span style=\'hot\'>{keywords[2]}</span>' if 2 < len(keywords) else ''
+                                      + ']'
                 body_text = highlight_keywords(body_text, keywords)
     return render_template('index.html', url=url, english=english, keywords=keywords_message, text=body_text)
 
