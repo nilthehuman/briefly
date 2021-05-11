@@ -35,7 +35,7 @@
             {% else %}
               {% if english %}
                 <p style="font-weight: bold">The main keywords seem to be: <span style="font-family: Consolas; font-weight: normal">{{ keywords|safe }}</span></p>
-                <p>{{ text }}...</p>
+                <p>{{ text|safe }}...</p>
               {% else %}
                 <p>That webpage does not seem to be written in English. &#x1f928;</p>
               {% endif %}
