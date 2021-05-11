@@ -52,10 +52,10 @@ def make_keywords_message(keywords):
 
 def highlight_keywords(body_text, keywords):
     """Generate HTML with keywords marked in color."""
-    keylemmata = list(map(wordnet.murphy, keywords))
+    keylemmata = list(map(wordnet.morphy, keywords))
     def colorize(word):
         nonlocal keylemmata
-        lemma = wordnet.murphy(word)
+        lemma = wordnet.morphy(word.lower())
         if not lemma:
             return word
         if lemma == keylemmata[0]:
