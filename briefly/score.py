@@ -21,7 +21,7 @@ def gensim_lda(string):
     # print_topics() spits out a list of pairs whose second elements are strings
     # with the main topic keywords buried in them, e.g.:
     # [(0, '0.148*"cats"'), (1, '0.225*"mice"'), (2, '0.150*"dogs"')]
-    topic_vector = lda_model.print_topics(num_words=1)
+    topic_vector = lda_model.print_topics(num_words=2)
     topics = [t.split('"')[1] for (_, t) in topic_vector] + [t.split('"')[3] for (_, t) in topic_vector]
     return list(set(topics))
 
