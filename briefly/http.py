@@ -24,6 +24,6 @@ def get_html_text(url):
     body_text = soup.body.get_text()
     # A bit of cleanup
     lines = (line.strip() for line in body_text.splitlines())
-    chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
-    body_text = '\n'.join(chunk for chunk in chunks if chunk)
+    words = (word.strip() for line in lines for word in line.split(' '))
+    body_text = ' '.join(word for word in words[0:150] if word)
     return full_text, body_text
