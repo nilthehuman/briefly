@@ -58,11 +58,11 @@ def highlight_keywords(body_text, keywords):
         lemma = wordnet.morphy(word.lower())
         if not lemma:
             return word
-        if lemma == keylemmata[0]:
+        if 0 < len(keylemmata) and lemma == keylemmata[0]:
             return f'<span class=\'hottest\'>{word}</span>'
-        elif lemma == keylemmata[1]:
+        elif 1 < len(keylemmata) and lemma == keylemmata[1]:
             return f'<span class=\'hotter\'>{word}</span>'
-        elif lemma == keylemmata[2]:
+        elif 2 < len(keylemmata) and lemma == keylemmata[2]:
             return f'<span class=\'hot\'>{word}</span>'
         else:
             return word
