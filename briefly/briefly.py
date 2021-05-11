@@ -40,7 +40,7 @@ def index(url=None):
 def make_keywords_message(keywords):
     keywords_message = ('[ ' +
                            (f'<span class=\'hottest\'>{keywords[0]}</span>' if 0 < len(keywords) else '') +
-                           (f'<span class=\'hotter\'>{keywords[1]}</span>' if 1 < len(keywords) else '') +
-                           (f'<span class=\'hot\'>{keywords[2]}</span>' if 2 < len(keywords) else '') +
+                           (f', <span class=\'hotter\'>{keywords[1]}</span>' if 1 < len(keywords) else '') +
+                           (f', <span class=\'hot\'>{keywords[2]}</span>' if 2 < len(keywords) else '') +
                         ' ]')
     return keywords_message
