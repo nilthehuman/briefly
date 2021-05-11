@@ -762,19 +762,19 @@ span.briefly {
 }
 
 span.hottest {
-  color: rgba(220, 32, 10, 1.0);
+  color: rgba(255, 50, 20, 1.0);
   font-family: Helvetica;
   font-weight: bold;
 }
 
 span.hotter {
-  color: rgba(220, 118, 10, 1.0);
+  color: rgba(255, 120, 40, 1.0);
   font-family: Helvetica;
   font-weight: bold;
 }
 
 span.hot {
-  color: rgba(240, 210, 10, 1.0);
+  color: rgba(255, 210, 20, 1.0);
   font-family: Helvetica;
   font-weight: bold;
 }
