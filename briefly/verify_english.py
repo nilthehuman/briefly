@@ -24,6 +24,8 @@ def prevalence_of_english_characters(string):
     """Determine the ratio of valid Latin characters and symbols in a string (between 0 and 1)."""
     remaining_char_count = len(non_english_characters(string))
     total_char_count = len(string)
+    if 0 == total_char_count:
+        return 0
     return 1 - remaining_char_count / total_char_count
 
 def strip_common_non_verbs(tokens):
